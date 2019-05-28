@@ -17,7 +17,7 @@ public class Background extends JComponent
 {
 
 	BufferedImage myImage = null;
-	BufferedImage guy = null;
+	BufferedImage guy = null; 
 	ImageObserver y = null;
 	Graphics2D x = null;
 
