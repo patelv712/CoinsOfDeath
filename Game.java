@@ -1,7 +1,9 @@
 package Game;
 
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.net.URL;
 
@@ -41,6 +43,7 @@ public class Game extends JFrame //Canvas is a blank work space to work and then
 				Thread.sleep(16);
 				this.repaint();
 				this.pack();
+			
 			}
 		}
 		catch(Exception e)
@@ -48,6 +51,7 @@ public class Game extends JFrame //Canvas is a blank work space to work and then
 			e.printStackTrace();  //helps determine where the error is if there is one
 		}
 	}	
+	
 	public static void main (String [] args)
 	{
 		Game x = new Game();
