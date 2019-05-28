@@ -33,7 +33,7 @@ public class Game extends JFrame //Canvas is a blank work space to work and then
 			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			this.setPreferredSize(new Dimension(WIDTH*SCALE, HEIGHT*SCALE));
 			this.setVisible(true); //sets the visibility of the component. It is by default false.
-			this.setFocusable(true); 
+			this.setFocusable(true);  
 			this.setResizable(false); //makes it so that the window size can not be adjusted
 			this.pack(); //sizes the frame so that all its contents are at or above their preferred sizes.
 			Background p = new Background();
