@@ -15,6 +15,7 @@ import javax.swing.JComponent;
 
 public class Background extends JComponent
 {
+
 	BufferedImage myImage = null;
 	BufferedImage guy = null;
 	ImageObserver y = null;
@@ -37,15 +38,15 @@ public class Background extends JComponent
 	{
 		try
 		{
-			myImage = ImageIO.read(new URL("https://media.graytvinc.com/images/810*456/ice-web.jpg")); //used to handle image data
+			myImage = ImageIO.read(new URL("https://www.pennington.com/-/media/images/pennington-na/us/blog/seed/all-you-need-to-know-about-bermudagrass/bermuda-header.jpg")); //used to handle image data
 			super.paintComponent(g);
 			g.drawImage(myImage, 0, 0, this.getWidth(), this.getHeight()/2 + 300, this); //use this not null bc when method called first time image has not been loaded yet so error if null
 			x = (Graphics2D) g;
-			x.setColor(Color.BLUE); //just in case background is still there
+			x.setColor(Color.GREEN); //just in case background is still there
 			//x.fillOval(700, 400, 100, 100);
-			guy = ImageIO.read(new URL("https://pbs.twimg.com/media/D7dSW0YWkAADVf-.png"));
+			guy = ImageIO.read(new URL("https://images-na.ssl-images-amazon.com/images/I/61O3LuvpDML._SY355_.png"));
 			x.drawImage(guy,xC,yC, h, w,  new Color(0,0,0,0), y);
-			keyPress(W);
+			keyPress(A);
 			
 		}
 		catch(Exception e)
@@ -86,8 +87,7 @@ public class Background extends JComponent
 				break;
 			}
 		}
-		x.drawImage(guy,xC,yC, h, w,  new Color(0,0,0,0), y);
-		repaint();
+		x.drawImage(guy,xC,yC, h, w,  new Color(0,0,0,0), y)	;
 	}
 	
 }
