@@ -1,4 +1,4 @@
-# DungeonsOfDeath
+# CoinsOfDeath
 AP Computer Science A 2019 Final Java Application Project
 Expectation for Game: 
 In our game, at the beginning of every round, a player will be created in the center of screen. To control the player, the person playing the game will use the keys W, A, S, D to move the player up, down, left and right. In the game, the goal of the player is to move to obtain as many coins as possible. For each round, there is a time limit and once the time runs out, the round is over. Randomly generated coins will appear on the screen for the player to move to collect. Sound will play if the player collects a coin. As the game progresses, randomly generated obstacles will appear, and if the player hits the obstacle the round is over. As of now, a round will conclude once the player collects all of the coins and there are a total of nine levels. As the levels increase the game will become more challenging as there will be more obstacles and less time to collect all of the coins. As the coins accumulate, coins may be used in the shop to buy new items.  
