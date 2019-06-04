@@ -1,12 +1,10 @@
-package Game;
-import java.awt.Button;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import java.net.URL;
+import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 import javax.swing.JComponent;
@@ -18,11 +16,13 @@ public class Background extends JComponent
 	BufferedImage guy = null; 
 	ImageObserver y = null;
 	Graphics2D x = null;
-
-	Component a = new Button();
+	ArrayList<Graphics2D> coins = new ArrayList<Graphics2D>();
+	
 	
 	private int xC = 700;
 	private int yC = 350;
+	private int xCoin = (int) (Math.random()*100) +1;
+	private int yCoin = (int) (Math.random()*100) +1;
 	public Background()
 	{
 		//addKeyListener(this);
