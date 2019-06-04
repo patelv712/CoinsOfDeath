@@ -1,3 +1,4 @@
+package Game;
 import java.awt.Dimension;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -63,11 +64,9 @@ public class Game extends JFrame implements KeyListener //Canvas is a blank work
 		{
 			case KeyEvent.VK_W:
 			{
-				//p.moveUp();
-				System.out.println("printing");
-		//		p.xC+=10;
+				p.moveUp();
 				System.out.println("hhhh" + e.getKeyChar());  //for testing purposes
-				//repaint();
+				break;
 			}
 			case KeyEvent.VK_A:
 			{
