@@ -15,12 +15,14 @@ public class Game extends JFrame implements KeyListener //Canvas is a blank work
 	
 	BufferedImage myImage = null; //BufferedImage is a class used to handle data regarding an image
 	
-	Background p = new Background();
+	//Player p;
+	Background p; 
 	public Game()
 	{
 		super ("Coins of Death");
-		
+		//this.p = new Player();
 		addKeyListener(this);
+		p = new Background();
 	}
 	public void start()
 	{
@@ -33,12 +35,14 @@ public class Game extends JFrame implements KeyListener //Canvas is a blank work
 			this.setFocusable(true);  
 			this.setResizable(false); //makes it so that the window size can not be adjusted
 			this.pack(); //sizes the frame so that all its contents are at or above their preferred sizes.
-			
+			//this.add(pe);
 			this.add(p);
+			//this.add(p);
 			while (true)
 			{
 				Thread.sleep(16);
 				this.repaint();
+				//p.repaint();
 			
 			}
 		}
@@ -50,13 +54,19 @@ public class Game extends JFrame implements KeyListener //Canvas is a blank work
 	public void keyTyped(KeyEvent evt)
 	{
 		
-		int key = evt.getKeyCode();
+		//do nothing rlly
+	}
+	public void keyPressed(KeyEvent e) {
+		System.out.println("keyPressed="+KeyEvent.getKeyText(e.getKeyCode()));
+		int key = e.getKeyCode();
 		switch(key)
 		{
 			case KeyEvent.VK_W:
 			{
-				p.moveUp();
-				System.out.println("" + evt.getKeyChar());  //for testing purposes
+				//p.moveUp();
+				System.out.println("printing");
+		//		p.xC+=10;
+				System.out.println("hhhh" + e.getKeyChar());  //for testing purposes
 				//repaint();
 			}
 			case KeyEvent.VK_A:
@@ -80,11 +90,7 @@ public class Game extends JFrame implements KeyListener //Canvas is a blank work
 				break;
 			}*/
 		}
-		x.drawImage(guy,xC,yC, 150, 150,  new Color(0,0,0,0), y);
-		repaint();
-	}
-	public void keyPressed(KeyEvent e) {
-		System.out.println("keyPressed="+KeyEvent.getKeyText(e.getKeyCode()));
+		
 	}
 
 	public void keyReleased(KeyEvent e) {
