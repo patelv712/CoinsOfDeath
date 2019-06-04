@@ -1,25 +1,27 @@
-public final class Coin {
+public final class Coin 
+{
     private double width;
     private double height;
     private double x;
     private double y;
     //private boolean hasCollided;
-     public double getWidth() {
+     public double getWidth() 
+     {
         return this.width;
     }
 
-    public double getHeight() {
+    public double getHeight()
+    {
         return this.height;
     }
     
-    public double getX() {
+    public double getX() 
+    {
         return this.x;
     }
     
-    public double getY() {
+    public double getY() 
+    {
         return this.y;
     }
-/* public boolean getCollide()
-{
-    return this.hasCollided;
-}   */
+}
