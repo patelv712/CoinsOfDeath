@@ -1,10 +1,9 @@
+package Game;
 import java.awt.Button;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import java.net.URL;
@@ -38,7 +37,7 @@ public class Background extends JComponent
 		{
 			myImage = ImageIO.read(new URL("https://www.pennington.com/-/media/images/pennington-na/us/blog/seed/all-you-need-to-know-about-bermudagrass/bermuda-header.jpg")); //used to handle image data
 			super.paintComponent(g);
-			g.drawImage(myImage, 0, 0, this.getWidth(), this.getHeight()/2 + 300, this); //use this not null bc when method called first time image has not been loaded yet so error if null
+			g.drawImage(myImage, 0, 0, this.getWidth(), this.getHeight() + 300, this); //use this not null bc when method called first time image has not been loaded yet so error if null
 			x = (Graphics2D) g;
 			x.setColor(Color.GREEN); //just in case background is still there
 			//x.fillOval(700, 400, 100, 100);
@@ -55,7 +54,7 @@ public class Background extends JComponent
 	
 	public void moveUp()
 	{
-		yC+= 10;
+		yC -= 10;
 		repaint();
 	}
 	public void moveRight()
@@ -70,9 +69,8 @@ public class Background extends JComponent
 	}
 	public void moveDown()
 	{
-		yC -= 10;
+		yC += 10;
 		repaint();
 	}
-	
-	
 }
+	
