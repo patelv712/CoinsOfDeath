@@ -28,7 +28,7 @@ public class Game extends JFrame implements KeyListener //Canvas is a blank work
 	{
 		try
 		{
-			this.setLocation(200, 200); 
+			this.setLocation(100, 100); 
 			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			this.setPreferredSize(new Dimension(WIDTH*SCALE, HEIGHT*SCALE));
 			this.setVisible(true); //sets the visibility of the component. It is by default false.
@@ -64,7 +64,6 @@ public class Game extends JFrame implements KeyListener //Canvas is a blank work
 			case KeyEvent.VK_W:
 			{
 				p.moveUp();
-				System.out.println("hhhh" + e.getKeyChar());  //for testing purposes
 				break;
 			}
 			case KeyEvent.VK_A:
