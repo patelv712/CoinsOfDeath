@@ -4,7 +4,7 @@ import java.net.MalformedURLException;
 
 import javax.swing.JFrame;
 
-public class Game2 extends JFrame
+public class Game extends JFrame
 {
 
 	private static final long serialVersionUID = 1L;
@@ -13,7 +13,7 @@ public class Game2 extends JFrame
 	private final int SCALE = 3;
 	private CoinsOfDeathModel game = new CoinsOfDeathModel();
 	Canvas field = new Canvas(game);
-	public Game2() throws MalformedURLException, IOException
+	public Game() throws MalformedURLException, IOException
 	{
 		super("Coins of Death");
 		this.game = new CoinsOfDeathModel();
@@ -33,7 +33,7 @@ public class Game2 extends JFrame
 	
 	public static void main(String [] args) throws MalformedURLException, IOException
 	{
-		Game2 x = new Game2();
+		Game x = new Game();
 		x.view();
 	}
 }
