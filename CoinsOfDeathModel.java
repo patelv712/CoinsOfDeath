@@ -17,6 +17,7 @@ public final class CoinsOfDeathModel {
     	}
     	this.player = new Guy(50,50,0,0);
     	this.score = 0;
+    	
     }
     public TimeLimit getTime()
     {   

@@ -7,7 +7,7 @@ public final class Guy
    
     public Guy(double width, double height, double x, double y)
     {
-    	if (height <= 0 || width <= 0)
+       	if (height <= 0 || width <= 0)
     	{
     		throw new IllegalArgumentException("Height/Width should not be negative/Zero !");
     	}
@@ -16,8 +16,28 @@ public final class Guy
     	this.x = x;
     	this.y = y;
     }
-     public double getWidth() 
-     {
+    public void moveUp(int amount)
+	{
+		this.y -= amount;
+	}
+	
+	public void moveRight(int amount)
+	{
+		this.x += amount;
+	}
+	
+	public void moveLeft(int amount)
+	{
+		this.x -= amount;
+	}
+	
+	public void moveDown(int amount)
+	{
+		this.y +=amount;
+	}
+	
+    public double getWidth() 
+    {
         return this.width;
     }
 

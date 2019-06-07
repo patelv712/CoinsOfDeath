@@ -1,3 +1,5 @@
+import java.time.Duration;
+
 public final class TimeLimit
 {
     java.time.Duration timeRemaining;
@@ -13,7 +15,14 @@ public final class TimeLimit
         this.timeRemaining = timeTotal;
         this.timeTotal = timeTotal;
     }
-
+    public void decreaseTime(long amount)
+    {
+    	if (this.timeRemaining.minus(Duration.ofMillis(amount)).isNegative())
+    	{
+    		 throw new IllegalArgumentException("Time remaining should not be negative");
+    	}
+    	this.timeRemaining = this.timeRemaining.minus(Duration.ofMillis(amount));
+    }
     public java.time.Duration getRemaining()
     {
       return this.timeRemaining;

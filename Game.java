@@ -17,7 +17,7 @@ public class Game extends JFrame
 		super("Coins of Death");
 		this.game = new CoinsOfDeathModel();
 		}
-	public void view() throws MalformedURLException, IOException
+	public void view() throws MalformedURLException, IOException, InterruptedException
 	{
 		Canvas field = new Canvas(game);
 		this.setLocation(100, 100); 
@@ -30,7 +30,7 @@ public class Game extends JFrame
 		this.add(field);
 	}
 	
-	public static void main(String [] args) throws MalformedURLException, IOException
+	public static void main(String [] args) throws MalformedURLException, IOException, InterruptedException
 	{
 		Game x = new Game();
 		x.view();

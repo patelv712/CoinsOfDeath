@@ -18,7 +18,8 @@ public class Canvas extends JComponent
 	private CoinsOfDeathModel state = null;
 	private int xC = 700; //xCoordinate of the player
 	private int yC = 350; //yCoordinate of the player
-	public Canvas(CoinsOfDeathModel state) throws MalformedURLException, IOException
+	static Thread thread = new Thread();
+	public Canvas(CoinsOfDeathModel state) throws MalformedURLException, IOException, InterruptedException
 	{
 		try
 		{
@@ -52,6 +53,12 @@ public class Canvas extends JComponent
 			g.drawString(Long.toString(state.getTime().getRemaining().getSeconds()), (this.getWidth()/2) -100, 100);
 			g.drawLine(this.getWidth()/2, 0, this.getWidth()/2, 150);
 			g.drawString(Integer.toString(state.getScore()), (this.getWidth()/2) + 50, 100);
+			for (int i = 60; i >= 0 ; i--)
+			{
+				thread.sleep(1000);
+				g.drawString(Integer.toString(i), 100,100);
+				
+			}
 			
 		} 
 		catch (Exception e) 
