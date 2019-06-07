@@ -12,15 +12,15 @@ import javax.swing.JComponent;
 public class Canvas extends JComponent
 {
 	private static final long serialVersionUID = 1L;
-	BufferedImage background = null;
-	BufferedImage playerIcon = null;
-	BufferedImage coinPic = null;
-	CoinsOfDeathModel state = new CoinsOfDeathModel();
+	private BufferedImage background = null;
+	private BufferedImage playerIcon = null;
+	//private BufferedImage coinPic = null;
+	private CoinsOfDeathModel state = null;
 	private int xC = 700; //xCoordinate of the player
 	private int yC = 350; //yCoordinate of the player
 	public Canvas(CoinsOfDeathModel state) throws MalformedURLException, IOException
 	{
-		this.coinPic = ImageIO.read(new URL("https://previews.123rf.com/images/rastudio/rastudio1802/rastudio180200842/96362871-gold-dollar-coin-circle-coin-with-dollar-symbol-isolated-on-transparent-background-means-of-payment-.jpg"));
+		//this.coinPic = ImageIO.read(new URL("https://previews.123rf.com/images/rastudio/rastudio1802/rastudio180200842/96362871-gold-dollar-coin-circle-coin-with-dollar-symbol-isolated-on-transparent-background-means-of-payment-.jpg"));
 		this.background = ImageIO.read(new URL("https://www.pennington.com/-/media/images/pennington-na/us/blog/seed/all-you-need-to-know-about-bermudagrass/bermuda-header.jpg"));
 		this.state = state;
 		this.playerIcon = ImageIO.read(new URL("https://images-na.ssl-images-amazon.com/images/I/61O3LuvpDML._SY355_.png"));
