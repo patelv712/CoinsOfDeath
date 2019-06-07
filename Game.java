@@ -12,15 +12,14 @@ public class Game extends JFrame
 	private final int HEIGHT = 500;
 	private final int SCALE = 3;
 	private CoinsOfDeathModel game = new CoinsOfDeathModel();
-	Canvas field = new Canvas(game);
 	public Game() throws MalformedURLException, IOException
 	{
 		super("Coins of Death");
 		this.game = new CoinsOfDeathModel();
 		}
-	public void view()
+	public void view() throws MalformedURLException, IOException
 	{
-		
+		Canvas field = new Canvas(game);
 		this.setLocation(100, 100); 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setPreferredSize(new Dimension(WIDTH*SCALE, HEIGHT*SCALE));
