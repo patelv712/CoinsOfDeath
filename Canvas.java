@@ -47,18 +47,11 @@ public class Canvas extends JComponent
 				g.fillRoundRect(state.getPoints().get(i).getX(), state.getPoints().get(i).getY(), 50, 50, 50, 50);
 			}
 			g.drawImage(playerIcon, xC,yC, 150, 150,  new Color(0,0,0,0), this);
-		
 			g.setColor(Color.BLACK);
 			g.setFont(new Font("TimesRoman", Font.PLAIN, 72)); 
 			g.drawString(Long.toString(state.getTime().getRemaining().getSeconds()), (this.getWidth()/2) -100, 100);
 			g.drawLine(this.getWidth()/2, 0, this.getWidth()/2, 150);
 			g.drawString(Integer.toString(state.getScore()), (this.getWidth()/2) + 50, 100);
-			for (int i = 60; i >= 0 ; i--)
-			{
-				thread.sleep(1000);
-				g.drawString(Integer.toString(i), 100,100);
-				
-			}
 			
 		} 
 		catch (Exception e) 
