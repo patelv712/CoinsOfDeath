@@ -19,7 +19,7 @@ public final class CoinsOfDeathModel {
     	this.score = 0;
     	
     }
-    private void removeCollidingCoins()
+    private void handleCollisions()
     {
         ArrayList<Coin> notColliding = new ArrayList<Coin>();
     	for (Coin coin : points)
@@ -31,6 +31,7 @@ public final class CoinsOfDeathModel {
     		}
     	}
     	this.points = notColliding;
+    	this.score += this.points.size()-notColliding.size();
     }
     
     /*public Coin whichCoinColliding()
@@ -53,7 +54,7 @@ public final class CoinsOfDeathModel {
     	{
         	this.player.moveUp(amount);
         	this.score++;
-        	this.removeCollidingCoins();
+        	this.handleCollisions();
     	}
 
     }
@@ -63,7 +64,7 @@ public final class CoinsOfDeathModel {
     	{
         	this.player.moveDown(amount);
         	this.score++;
-        	this.removeCollidingCoins();
+        	this.handleCollisions();
     	}
 
     }
@@ -73,7 +74,7 @@ public final class CoinsOfDeathModel {
     	{
         	this.player.moveRight(amount);
         	this.score++;
-        	this.removeCollidingCoins();
+        	this.handleCollisions();
     	}
 
     }
@@ -83,7 +84,7 @@ public final class CoinsOfDeathModel {
     	{
         	this.player.moveLeft(amount);
         	this.score++;
-        	this.removeCollidingCoins();
+        	this.handleCollisions();
     	}
 
     }
