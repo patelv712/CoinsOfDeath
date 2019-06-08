@@ -16,13 +16,14 @@ public class Canvas extends JComponent
 	private BufferedImage playerIcon = null;
 	//private BufferedImage coinPic = null;
 	private CoinsOfDeathModel state = null;
-	private int xC = (int) state.getPlayer().getX(); //xCoordinate of the player
-	private int yC = (int) state.getPlayer().getY(); //yCoordinate of the player
+	private int xC; //xCoordinate of the player
+	private int yC; //yCoordinate of the player
 	public Canvas(CoinsOfDeathModel state) 
 	{
 		try
 		{
 			//this.coinPic = ImageIO.read(new URL("https://previews.123rf.com/images/rastudio/rastudio1802/rastudio180200842/96362871-gold-dollar-coin-circle-coin-with-dollar-symbol-isolated-on-transparent-background-means-of-payment-.jpg"));
+			
 			this.background = ImageIO.read(new URL("https://www.pennington.com/-/media/images/pennington-na/us/blog/seed/all-you-need-to-know-about-bermudagrass/bermuda-header.jpg"));
 			this.state = state;
 			this.playerIcon = ImageIO.read(new URL("https://images-na.ssl-images-amazon.com/images/I/61O3LuvpDML._SY355_.png"));
@@ -36,7 +37,8 @@ public class Canvas extends JComponent
 	{
 		try 
 		{
-			
+			xC = (int) state.getPlayer().getX(); 
+			yC = (int) state.getPlayer().getY(); 
 			super.paintComponent(g);
 			g.drawImage(background, 0, 0, this.getWidth(), this.getHeight(), this); //use this not null bc when method called first time image has not been loaded yet so error if null
 			g.setColor(Color.YELLOW);

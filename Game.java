@@ -55,22 +55,22 @@ public class Game extends JFrame implements ActionListener, KeyListener
 		this.repaint();
 		if (upPressed)
 		{
-			this.game.getPlayer().moveUp(1.0);
+			this.game.moveUp(1.0);
 			this.repaint();
 		}
 		if(downPressed)
 		{
-			this.game.getPlayer().moveDown(1.0);
+			this.game.moveDown(1.0);
 			this.repaint();
 		}
 		if(rightPressed)
 		{
-			this.game.getPlayer().moveRight(1.0);
+			this.game.moveRight(1.0);
 			this.repaint();
 		}
 		if(leftPressed)
 		{
-			this.game.getPlayer().moveLeft(1.0);
+			this.game.moveLeft(1.0);
 			this.repaint();
 		}
 		

@@ -19,7 +19,7 @@ public final class TimeLimit
     }
     public boolean timeUp()
     {
-    	if (timeRemaining == Duration.ZERO) 
+    	if (this.timeRemaining == Duration.ZERO) 
     	{
     		return true;
     	}
