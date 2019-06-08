@@ -83,7 +83,7 @@ public class Game extends JFrame implements ActionListener, KeyListener
 	public void keyPressed(KeyEvent e) {
 		System.out.println("keyPressed="+KeyEvent.getKeyText(e.getKeyCode()));
 		int key = e.getKeyCode();
-		switch(key)
+		switch(key) 
 		{
 			case KeyEvent.VK_W:
 			{

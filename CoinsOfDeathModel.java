@@ -9,7 +9,7 @@ public final class CoinsOfDeathModel {
     public CoinsOfDeathModel()
     {
     	this.time = new TimeLimit(java.time.Duration.ofMinutes(1));
-    	for (int i = 0; i < 10; i ++)
+    	for (int i = 0; i < 10; i ++) //creates random location for 10 coins
     	{
     		int x = (int) Math.round(Math.random()*1200);
     		int y = (int) Math.round(Math.random()*750);
@@ -22,10 +22,10 @@ public final class CoinsOfDeathModel {
     private void handleCollisions()
     {
         ArrayList<Coin> notColliding = new ArrayList<Coin>();
-    	for (Coin coin : points)
+    	for (Coin coin : points) //iterates through each coin in the arrayList to check if it collides with the player
     	{
     		double distance = Math.sqrt(Math.pow((player.getX() + player.getWidth()/2)  - (coin.getX() - coin.getWidth()/2), 2) + Math.pow(player.getY() - coin.getY(),2));
-    		if (distance > 1)
+    		if (distance > 0)
     		{
     			notColliding.add(coin);
     		}

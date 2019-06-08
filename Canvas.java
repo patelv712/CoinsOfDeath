@@ -42,7 +42,7 @@ public class Canvas extends JComponent
 			super.paintComponent(g);
 			g.drawImage(background, 0, 0, this.getWidth(), this.getHeight(), this); //use this not null bc when method called first time image has not been loaded yet so error if null
 			g.setColor(Color.YELLOW);
-			for (int i = 0; i < state.getPoints().size(); i++)
+			for (int i = 0; i < state.getPoints().size(); i++)  //draws 10 coins
 			{
 				//g.drawImage(coinPic, state.getPoints().get(i).getX(), state.getPoints().get(i).getY(), 50, 50, new Color(0,0,0,0), this);
 				g.fillRoundRect(state.getPoints().get(i).getX(), state.getPoints().get(i).getY(), 50, 50, 50, 50);
