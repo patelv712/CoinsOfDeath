@@ -34,26 +34,12 @@ public final class CoinsOfDeathModel {
     	this.score += this.points.size()-notColliding.size();
     }
     
-    /*public Coin whichCoinColliding()
-    {
-    	int i = 0;
-    	for (Coin e : points)
-    	{
-    		double distance = Math.sqrt(Math.pow((e.getX() + e.getWidth()/2)  - (points.get(i).getX() - points.get(i).getWidth()/2), 2) + Math.pow(e.getY() -points.get(i).getY(),2));
-    		i++;
-    		if (distance < 1)
-    		{
-    			return e;
-    		}
-    	}
-    	return null;
-    }*/
+    
     public void moveUp(int amount)
     {
     	if (!time.timeUp())
     	{
         	this.player.moveUp(amount);
-        	this.score++;
         	this.handleCollisions();
     	}
 
@@ -63,7 +49,7 @@ public final class CoinsOfDeathModel {
     	if (!time.timeUp())
     	{
         	this.player.moveDown(amount);
-        	this.score++;
+
         	this.handleCollisions();
     	}
 
@@ -73,7 +59,6 @@ public final class CoinsOfDeathModel {
     	if (!time.timeUp())
     	{
         	this.player.moveRight(amount);
-        	this.score++;
         	this.handleCollisions();
     	}
 
@@ -83,7 +68,6 @@ public final class CoinsOfDeathModel {
     	if (!time.timeUp())
     	{
         	this.player.moveLeft(amount);
-        	this.score++;
         	this.handleCollisions();
     	}
 
