@@ -19,7 +19,7 @@ public final class Coin
      public double getWidth() 
      {
         return this.width;
-    }
+     }
 
     public double getHeight()
     {
