@@ -16,22 +16,22 @@ public final class Guy
     	this.x = x;
     	this.y = y;
     }
-    public void moveUp(int amount)
+    public void moveUp(double amount)
 	{
 		this.y -= amount;
 	}
 	
-	public void moveRight(int amount)
+	public void moveRight(double amount)
 	{
 		this.x += amount;
 	}
 	
-	public void moveLeft(int amount)
+	public void moveLeft(double amount)
 	{
 		this.x -= amount;
 	}
 	
-	public void moveDown(int amount)
+	public void moveDown(double amount)
 	{
 		this.y +=amount;
 	}

@@ -35,16 +35,16 @@ public final class CoinsOfDeathModel {
     }
     
     
-    public void moveUp(int amount)
+    public void moveUp(double d)
     {
     	if (!time.timeUp())
     	{
-        	this.player.moveUp(amount);
+        	this.player.moveUp(d);
         	this.handleCollisions();
     	}
 
     }
-    public void moveDown(int amount)
+    public void moveDown(double amount)
     {
     	if (!time.timeUp())
     	{
@@ -54,7 +54,7 @@ public final class CoinsOfDeathModel {
     	}
 
     }
-    public void moveRight(int amount)
+    public void moveRight(double amount)
     {
     	if (!time.timeUp())
     	{
@@ -63,7 +63,7 @@ public final class CoinsOfDeathModel {
     	}
 
     }
-    public void moveLeft(int amount)
+    public void moveLeft(double amount)
     {
     	if (!time.timeUp())
     	{

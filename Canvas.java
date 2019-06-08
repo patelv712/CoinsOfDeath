@@ -16,10 +16,9 @@ public class Canvas extends JComponent
 	private BufferedImage playerIcon = null;
 	//private BufferedImage coinPic = null;
 	private CoinsOfDeathModel state = null;
-	private int xC = 700; //xCoordinate of the player
-	private int yC = 350; //yCoordinate of the player
-	static Thread thread = new Thread();
-	public Canvas(CoinsOfDeathModel state) throws MalformedURLException, IOException, InterruptedException
+	private int xC = (int) state.getPlayer().getX(); //xCoordinate of the player
+	private int yC = (int) state.getPlayer().getY(); //yCoordinate of the player
+	public Canvas(CoinsOfDeathModel state) 
 	{
 		try
 		{
