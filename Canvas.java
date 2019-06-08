@@ -1,9 +1,9 @@
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.geom.Line2D;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 import javax.imageio.ImageIO;
@@ -32,7 +32,7 @@ public class Canvas extends JComponent
 		{
 			throw new RuntimeException(e);
 		}
-	} 
+	}
 	public void paintComponent(Graphics g)
 	{
 		try 
@@ -47,11 +47,11 @@ public class Canvas extends JComponent
 				//g.drawImage(coinPic, state.getPoints().get(i).getX(), state.getPoints().get(i).getY(), 50, 50, new Color(0,0,0,0), this);
 				g.fillRoundRect(state.getPoints().get(i).getX(), state.getPoints().get(i).getY(), 50, 50, 50, 50);
 			}
-			g.drawImage(playerIcon, xC,yC, 150, 150,  new Color(0,0,0,0), this);
+			g.drawImage(playerIcon, xC + playerIcon.getWidth()/2,yC + playerIcon.getHeight()/2, 150, 150,  new Color(0,0,0,0), this);
 			g.setColor(Color.BLACK);
 			g.setFont(new Font("TimesRoman", Font.PLAIN, 72)); 
 			g.drawString(Long.toString(state.getTime().getRemaining().getSeconds()), (this.getWidth()/2) -100, 100);
-			g.drawLine(this.getWidth()/2, 0, this.getWidth()/2, 150);
+			//g.drawLine(this.getWidth()/2, 0, this.getWidth()/2, 150);
 			g.drawString(Integer.toString(state.getScore()), (this.getWidth()/2) + 50, 100);
 			
 		} 

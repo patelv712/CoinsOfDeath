@@ -19,22 +19,25 @@ public final class CoinsOfDeathModel {
     	this.score = 0;
     	
     }
-    private void handleCollisions()
+   private void handleCollisions()
     {
-        ArrayList<Coin> notColliding = new ArrayList<Coin>();
+    	ArrayList<Coin> noCollide = new ArrayList<Coin>();
     	for (Coin coin : points) //iterates through each coin in the arrayList to check if it collides with the player
     	{
+    	
     		double distance = Math.sqrt(Math.pow((player.getX() + player.getWidth()/2)  - (coin.getX() - coin.getWidth()/2), 2) + Math.pow(player.getY() - coin.getY(),2));
-    		if (distance > 0)
+    		if (distance > 90)
     		{
-    			notColliding.add(coin);
+    			noCollide.add(coin);
+    		}
+    		else
+    		{
+    			this.score = this.points.size() - noCollide.size();
+    			this.points = noCollide;
     		}
     	}
-    	this.points = notColliding;
-    	this.score += this.points.size()-notColliding.size();
+    	
     }
-    
-    
     public void moveUp(double amount)
     {
     	if (!time.timeUp())

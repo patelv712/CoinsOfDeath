@@ -3,6 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.Timer;
@@ -39,10 +40,10 @@ public class Game extends JFrame implements ActionListener, KeyListener
 		this.pack(); //sizes the frame so that all its contents are at or above their preferred sizes.
 		this.add(field);
 		this.timer.start(); //calls actionPerformed
-		this.game.moveUp(0.1);
+		this.game.moveUp(10);
 		this.repaint();
 	}
-	
+   
 	public static void main(String [] args) 
 	{
 		Game x = new Game();
@@ -55,22 +56,22 @@ public class Game extends JFrame implements ActionListener, KeyListener
 		this.repaint();
 		if (upPressed)
 		{
-			this.game.moveUp(1.0);
+			this.game.moveUp(10);
 			this.repaint();
 		}
 		if(downPressed)
 		{
-			this.game.moveDown(1.0);
+			this.game.moveDown(10);
 			this.repaint();
 		}
 		if(rightPressed)
 		{
-			this.game.moveRight(1.0);
+			this.game.moveRight(10);
 			this.repaint();
 		}
 		if(leftPressed)
 		{
-			this.game.moveLeft(1.0);
+			this.game.moveLeft(10);
 			this.repaint();
 		}
 		
