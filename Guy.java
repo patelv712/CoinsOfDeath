@@ -7,7 +7,7 @@ public final class Guy
     private double height;
     private double x;
     private double y;
-
+    AudioPlayer a = new AudioPlayer();
     public Guy(double width, double height, double x, double y)
     {
         if (height <= 0 || width <= 0)
@@ -62,6 +62,11 @@ public final class Guy
     public boolean isColliding(Coin coin) {
         Rectangle2D thisShape = new java.awt.geom.Rectangle2D.Double(this.x, this.y, this.width, this.height);
         Rectangle2D otherShape = new java.awt.geom.Rectangle2D.Double(coin.getX(), coin.getY(), coin.getWidth(), coin.getHeight());
-        return thisShape.intersects(otherShape);
+        boolean x = thisShape.intersects(otherShape);
+        if (x)
+        {
+        	a.startCoinAudio();
+        }
+        return x;
     }
 }

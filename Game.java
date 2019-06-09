@@ -40,6 +40,7 @@ public class Game extends JFrame implements ActionListener, KeyListener
         this.pack(); //sizes the frame so that all its contents are at or above their preferred sizes.
         this.add(field);
         this.timer.start(); //calls actionPerformed
+        game.getAudio().startBackgroundAudio();
         this.repaint();
     }
 

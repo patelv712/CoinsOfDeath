@@ -6,6 +6,7 @@ public final class CoinsOfDeathModel {
     private ArrayList<Coin> points = new ArrayList<Coin>();
     private Guy player;
     private int score;
+    private AudioPlayer audio;
     public CoinsOfDeathModel()
     {
         this.time = new TimeLimit(java.time.Duration.ofMinutes(1));
@@ -15,6 +16,7 @@ public final class CoinsOfDeathModel {
             int y = (int) Math.round(Math.random()*750);
             points.add(new Coin(50,50,x,y));
         }
+        audio = new AudioPlayer();
         this.player = new Guy(50,50,0,0);
         this.score = 0;
 
@@ -28,10 +30,15 @@ public final class CoinsOfDeathModel {
             {
                 noCollide.add(coin);
             }
+            
         }
         this.score += this.points.size() - noCollide.size();
         this.points = noCollide;
 
+    }
+    public AudioPlayer getAudio()
+    {
+    	return audio;
     }
     public void moveUp(double amount)
     {
@@ -40,14 +47,29 @@ public final class CoinsOfDeathModel {
             this.player.moveUp(amount);
             this.handleCollisions();
         }
-
+        else
+        {
+        	gameOverSound();
+        }
+    }
+    public void gameOverSound()
+    {
+    	if (time.timeUp() && this.score < 10)
+    	{
+    		audio.stopBackgroundAudio();
+        	audio.startSadGameOverAudio();
+    	}
+    	else
+    	{
+    		audio.stopBackgroundAudio();
+        	audio.startHappyGameOverAudio();
+    	}
     }
     public void moveDown(double amount)
     {
         if (!time.timeUp())
         {
             this.player.moveDown(amount);
-
             this.handleCollisions();
         }
 
@@ -68,6 +90,7 @@ public final class CoinsOfDeathModel {
             this.player.moveLeft(amount);
             this.handleCollisions();
         }
+       
 
     }
     public void decreaseTime(long amount)
