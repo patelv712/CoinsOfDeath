@@ -32,15 +32,17 @@ public class AudioPlayer extends JFrame {
           sadGameOverSound = new File("C:\\\\Users\\\\varun\\\\Downloads\\MarioSoundGameOver.wav"); //you could also get the sound file with an URL
           audioIn2 = AudioSystem.getAudioInputStream(sadGameOverSound); 
           happyGameOverSound = new File("C:\\\\Users\\\\varun\\\\Downloads\\MarioWinSound.wav"); //you could also get the sound file with an URL
-          audioIn2 = AudioSystem.getAudioInputStream(happyGameOverSound);
+          audioIn3 = AudioSystem.getAudioInputStream(happyGameOverSound);
          // Get a sound clip resource.
          clip = AudioSystem.getClip();
          clip1 = AudioSystem.getClip();
          clip2 = AudioSystem.getClip();
+         clip3 = AudioSystem.getClip();
          // Open audio clip and load samples from the audio input stream.
          clip.open(audioIn);
          clip1.open(audioIn1);
          clip2.open(audioIn2);
+         clip3.open(audioIn3);
       } catch (UnsupportedAudioFileException e) {
          e.printStackTrace();
       } catch (IOException e) {
@@ -53,11 +55,26 @@ public class AudioPlayer extends JFrame {
    public void startBackgroundAudio() 
    {
       clip.start();
-   
+   }
+   public void stopBackgroundAudio()
+   {
+	   clip.stop();
    }
    public void startCoinAudio()
    {
 	   clip1.start();
+   }
+   public void stopCoinAudio()
+   {
+	   clip1.stop();
+   }
+   public void startSadGameOverAudio()
+   {
+	   clip2.start();
+   }
+   public void stopSadGameOverAudio()
+   {
+	   clip2.stop();
    }
    public void startHappyGameOverAudio()
    {
@@ -67,20 +84,6 @@ public class AudioPlayer extends JFrame {
    {
 	   clip3.stop();
    }
-   public void startSadGameOverAudio()
-   {
-	   clip2.start();
-   }
-   public void stopBackgroundAudio()
-   {
-	   clip.stop();
-   }
-   public void stopCoinAudio()
-   {
-	   clip1.stop();
-   }
-   public void stopSadGameOverAudio()
-   {
-	   clip2.stop();
-   }
+ 
+   
 }

@@ -40,58 +40,60 @@ public final class CoinsOfDeathModel {
     {
     	return audio;
     }
-    public void moveUp(double amount)
+    
+    public void manageSound()
     {
-        if (!time.timeUp())
-        {
-            this.player.moveUp(amount);
-            this.handleCollisions();
-        }
-        else
-        {
-        	gameOverSound();
-        }
-    }
-    public void gameOverSound()
-    {
+    	if (!time.timeUp())
+    	{
+    		audio.startBackgroundAudio();
+    	}
     	if (time.timeUp() && this.score < 10)
     	{
     		audio.stopBackgroundAudio();
         	audio.startSadGameOverAudio();
     	}
-    	else
+    	if (time.timeUp() && this.score == 10)
     	{
     		audio.stopBackgroundAudio();
         	audio.startHappyGameOverAudio();
     	}
     }
+
+    public void moveUp(double amount)
+    {
+    	if (!time.timeUp())
+    	{
+            this.player.moveUp(amount);
+            this.handleCollisions();
+    	}
+        this.manageSound();
+    }
     public void moveDown(double amount)
     {
-        if (!time.timeUp())
-        {
+    	if (!time.timeUp())
+    	{
             this.player.moveDown(amount);
             this.handleCollisions();
-        }
-
-    }
-    public void moveRight(double amount)
-    {
-        if (!time.timeUp())
-        {
-            this.player.moveRight(amount);
-            this.handleCollisions();
-        }
-
+    	}
+        this.manageSound();
     }
     public void moveLeft(double amount)
     {
-        if (!time.timeUp())
-        {
+    	if (!time.timeUp())
+    	{
             this.player.moveLeft(amount);
             this.handleCollisions();
-        }
-       
-
+    	}
+        this.manageSound();
+    }
+    public void moveRight(double amount)
+    {
+    	if (!time.timeUp())
+    	{
+            this.player.moveRight(amount);
+            this.handleCollisions();
+    	}
+        this.manageSound();
     }
     public void decreaseTime(long amount)
     {
