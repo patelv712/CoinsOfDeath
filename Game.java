@@ -8,7 +8,6 @@ import javax.swing.Timer;
 
 public class Game extends JFrame implements ActionListener, KeyListener
 {
-
     private static final long serialVersionUID = 1L;
     private final int WIDTH = 500;
     private final int HEIGHT = 500;
@@ -20,6 +19,9 @@ public class Game extends JFrame implements ActionListener, KeyListener
     private boolean downPressed;
     private boolean leftPressed;
     private boolean rightPressed;
+    private Canvas field;
+
+    JFrame x = new JFrame("Title");
     public Game()
     {
         super("Coins of Death");
@@ -28,7 +30,7 @@ public class Game extends JFrame implements ActionListener, KeyListener
     }
     public void view()
     {
-        Canvas field = new Canvas(game);
+        field = new Canvas(game);
         this.setLocation(100, 100);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setPreferredSize(new Dimension(WIDTH*SCALE, HEIGHT*SCALE));
@@ -38,26 +40,7 @@ public class Game extends JFrame implements ActionListener, KeyListener
         this.pack(); //sizes the frame so that all its contents are at or above their preferred sizes.
         this.add(field);
         this.timer.start(); //calls actionPerformed
-        if (!game.getTime().timeUp())
-        	{
-        		game.getAudio().startBackgroundAudio();
-        	}
-        if (game.getTime().timeUp() && game.getScore() < 10)
-    	{
-    		game.getAudio().stopBackgroundAudio();
-        	game.getAudio().startSadGameOverAudio();
-    	}
-    	if (game.getTime().timeUp() && game.getScore() == 10)
-    	{
-    		game.getAudio().stopBackgroundAudio();
-        	game.getAudio().startHappyGameOverAudio();
-    	}
-    }
-
-    public static void main(String [] args)
-    {
-        Game x = new Game();
-        x.view();
+        this.game.getAudio().startBackgroundAudio();
     }
     @Override
     public void actionPerformed(ActionEvent e)
@@ -82,7 +65,7 @@ public class Game extends JFrame implements ActionListener, KeyListener
         }
 
         this.repaint();
-
+       
     }
     public void keyTyped(KeyEvent evt)
     {
@@ -115,6 +98,11 @@ public class Game extends JFrame implements ActionListener, KeyListener
                 rightPressed = true;
                 break;
             }
+            case KeyEvent.VK_SPACE:
+            {
+            	field.startGame();
+            	break;
+            }
             default:
             {
                 System.out.println("no mapping for this key");
@@ -131,5 +119,10 @@ public class Game extends JFrame implements ActionListener, KeyListener
         downPressed = false;
         leftPressed = false;
         rightPressed = false;
+    }
+    public static void main(String [] args)
+    {
+        Game x = new Game();
+        x.view();
     }
 }

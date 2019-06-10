@@ -42,7 +42,7 @@ public final class CoinsOfDeathModel {
     } 
     public void moveUp(double amount)
     {
-    	if (!time.timeUp())
+    	if (!time.timeUp() || this.score != 10)
     	{
             this.player.moveUp(amount);
             this.handleCollisions();
@@ -51,7 +51,7 @@ public final class CoinsOfDeathModel {
     }
     public void moveDown(double amount)
     {
-    	if (!time.timeUp())
+    	if (!time.timeUp() || this.score != 10)
     	{
             this.player.moveDown(amount);
             this.handleCollisions();
@@ -60,7 +60,7 @@ public final class CoinsOfDeathModel {
     }
     public void moveLeft(double amount)
     {
-    	if (!time.timeUp())
+    	if (!time.timeUp() || this.score != 10)
     	{
             this.player.moveLeft(amount);
             this.handleCollisions();
@@ -69,7 +69,7 @@ public final class CoinsOfDeathModel {
     }
     public void moveRight(double amount)
     {
-    	if (!time.timeUp())
+    	if (!time.timeUp() || this.score != 10)
     	{
             this.player.moveRight(amount);
             this.handleCollisions();
@@ -78,7 +78,16 @@ public final class CoinsOfDeathModel {
     }
     public void manageSound()
     {
-    	
+    	if (time.timeUp() && this.score < 10)
+    	{
+    		audio.stopBackgroundAudio();
+        	audio.startSadGameOverAudio();
+    	}
+    	if (time.timeUp() && this.score == 10)
+    	{
+    		audio.stopBackgroundAudio();
+        	audio.startHappyGameOverAudio();
+    	}
     }
     public void decreaseTime(long amount)
     {
