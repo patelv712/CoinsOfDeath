@@ -62,11 +62,7 @@ public final class Guy
     public boolean isColliding(Coin coin) {
         Rectangle2D thisShape = new java.awt.geom.Rectangle2D.Double(this.x, this.y, this.width, this.height);
         Rectangle2D otherShape = new java.awt.geom.Rectangle2D.Double(coin.getX(), coin.getY(), coin.getWidth(), coin.getHeight());
-        boolean x = thisShape.intersects(otherShape);
-        if (x)
-        {
-        	a.startCoinAudio();
-        }
-        return x;
+        return thisShape.intersects(otherShape);
+
     }
 }

@@ -31,34 +31,15 @@ public final class CoinsOfDeathModel {
                 noCollide.add(coin);
             }
             
+            if (this.player.isColliding(coin))
+            {
+            	this.audio.startCoinAudio();
+            }
         }
         this.score += this.points.size() - noCollide.size();
         this.points = noCollide;
 
-    }
-    public AudioPlayer getAudio()
-    {
-    	return audio;
-    }
-    
-    public void manageSound()
-    {
-    	if (!time.timeUp())
-    	{
-    		audio.startBackgroundAudio();
-    	}
-    	if (time.timeUp() && this.score < 10)
-    	{
-    		audio.stopBackgroundAudio();
-        	audio.startSadGameOverAudio();
-    	}
-    	if (time.timeUp() && this.score == 10)
-    	{
-    		audio.stopBackgroundAudio();
-        	audio.startHappyGameOverAudio();
-    	}
-    }
-
+    } 
     public void moveUp(double amount)
     {
     	if (!time.timeUp())
@@ -95,10 +76,19 @@ public final class CoinsOfDeathModel {
     	}
         this.manageSound();
     }
+    public void manageSound()
+    {
+    	
+    }
     public void decreaseTime(long amount)
     {
         time.decreaseTime(amount);
     }
+    public AudioPlayer getAudio()
+    {
+    	return audio;
+    }
+    
     public TimeLimit getTime()
     {
         return this.time;

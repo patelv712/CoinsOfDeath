@@ -3,8 +3,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.time.Duration;
-
 import javax.swing.JFrame;
 import javax.swing.Timer;
 
@@ -40,6 +38,20 @@ public class Game extends JFrame implements ActionListener, KeyListener
         this.pack(); //sizes the frame so that all its contents are at or above their preferred sizes.
         this.add(field);
         this.timer.start(); //calls actionPerformed
+        if (!game.getTime().timeUp())
+        	{
+        		game.getAudio().startBackgroundAudio();
+        	}
+        if (game.getTime().timeUp() && game.getScore() < 10)
+    	{
+    		game.getAudio().stopBackgroundAudio();
+        	game.getAudio().startSadGameOverAudio();
+    	}
+    	if (game.getTime().timeUp() && game.getScore() == 10)
+    	{
+    		game.getAudio().stopBackgroundAudio();
+        	game.getAudio().startHappyGameOverAudio();
+    	}
     }
 
     public static void main(String [] args)
@@ -77,7 +89,8 @@ public class Game extends JFrame implements ActionListener, KeyListener
 
         //do nothing rlly
     }
-    public void keyPressed(KeyEvent e) {
+    public void keyPressed(KeyEvent e) 
+    {
         System.out.println("keyPressed="+KeyEvent.getKeyText(e.getKeyCode()));
         int key = e.getKeyCode();
         switch(key)
@@ -111,7 +124,8 @@ public class Game extends JFrame implements ActionListener, KeyListener
 
     }
 
-    public void keyReleased(KeyEvent e) {
+    public void keyReleased(KeyEvent e) 
+    {
         System.out.println("keyReleased="+KeyEvent.getKeyText(e.getKeyCode()));
         upPressed = false;
         downPressed = false;

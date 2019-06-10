@@ -1,6 +1,5 @@
 import java.io.File;
 import java.io.IOException;
-
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -8,7 +7,8 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JFrame;
 
-public class AudioPlayer extends JFrame {
+public class AudioPlayer extends JFrame
+{
 
 	private Clip clip;
 	private File backgroundSound;
@@ -22,8 +22,10 @@ public class AudioPlayer extends JFrame {
 	private Clip clip3;
 	private File happyGameOverSound;
 	private AudioInputStream audioIn3;
-   public AudioPlayer() {    
-      try {
+   public AudioPlayer() 
+   {    
+      try 
+      {
          // Open an audio input stream.           
           backgroundSound = new File("C:\\\\Users\\\\varun\\\\Downloads\\Tricky_Maze_...for_Lost_World_-_Sonic_Adventure_Music_Extended-JcRsqVM3l5k.wav"); //you could also get the sound file with an URL
           audioIn = AudioSystem.getAudioInputStream(backgroundSound);   
@@ -43,11 +45,17 @@ public class AudioPlayer extends JFrame {
          clip1.open(audioIn1);
          clip2.open(audioIn2);
          clip3.open(audioIn3);
-      } catch (UnsupportedAudioFileException e) {
+      } 
+      catch (UnsupportedAudioFileException e) 
+      {
          e.printStackTrace();
-      } catch (IOException e) {
+      } 
+      catch (IOException e) 
+      {
          e.printStackTrace();
-      } catch (LineUnavailableException e) {
+      }
+      catch (LineUnavailableException e)
+      {
          e.printStackTrace();
       }
    }
